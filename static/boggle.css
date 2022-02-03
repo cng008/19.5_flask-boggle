@@ -1,0 +1,41 @@
+body {
+  background-color: lightgrey;
+}
+
+h1 {
+  font-size: 50px;
+  text-shadow: 2px 2px white;
+  text-align: center;
+  margin: 20px 0;
+}
+
+#board {
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: -4px -4px 8px rgb(255 255 255 / 70%), 4px 4px 8px rgb(0 0 0 / 40%);
+  border-radius: 15px;
+}
+
+td {
+  border-radius: 15px;
+  text-transform: uppercase;
+  position: relative;
+  float: left;
+  width: 65px;
+  height: 65px;
+  margin: 7px;
+  box-shadow: -4px -4px 8px rgb(255 255 255 / 70%), 4px 4px 8px rgb(0 0 0 / 40%);
+}
+
+td:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset -3px -3px 8px rgb(255 255 255 / 30%);
+  color: rgb(173, 132, 71);
+}
+
+span {
+  font-size: 3.5em;
+  display: flex;
+  justify-content: center;
+}
