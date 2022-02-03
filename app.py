@@ -18,3 +18,22 @@ def index():
     session['board'] = board
     
     return render_template("index.html", board=board)
+
+@app.route("/check", methods=["POST"])
+def check_word():
+    """ Save response and redirect to next question """
+
+    # get text from form
+    guess = request.form['guess']
+
+    # add response to session
+    response = session['board']
+    response.append(guess)
+    session['board'] = response
+
+    if (len(response) == len(survey.questions)):
+        # They've answered all the questions! Thank them.
+        return redirect("/thanks")
+
+    else:
+        return redirect(f"/questions/{len(response)}")
