@@ -16,14 +16,14 @@
         <div class="container" id="game-info">
             <div class="row mb-3">
                 <div class="col-3">
-                    <button>New Game</button>
+                    <button id="refresh">New Game</button>
                 </div>
                 <div class="col-3">
                     <span id="timer"></span>
                 </div>
                 <div class="col-6">
                     <form method="POST" id="add-word">
-                        <input name="word" id="word" style="text-transform:uppercase" autocomplete="off">
+                        <input name="word" id="word" style="text-transform:uppercase" autocomplete="off" required>
                         <button id="check">Check</button>
                     </form>
                 </div>
@@ -58,7 +58,7 @@
                     </table>
                 </div>
 
-                <div class="col-2">
+                <div class="col-2 score-board">
                     <p>score: <span id="score" style="color:orange;"></span></p>
                     <p>best score: 
                         <span id="best-score">
@@ -74,9 +74,5 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.js"></script>
     <script src="/static/boggle.js"></script>
-    <!-- <script>
-        let game = new BoggleGame("boggle", 60);
-    </script>
-   -->
 </body>
 </html>

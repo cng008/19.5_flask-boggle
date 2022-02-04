@@ -2,6 +2,11 @@ let score = 0;
 let countdown = 60;
 let words = new Set();
 
+/* HANDLE NEW GAME CLICK */
+$('#refresh').on('click', () => {
+  location.reload();
+});
+
 /* HANDLE BOARD CLICK */
 // Add letter to input on click
 $('span').on('click', e => {
