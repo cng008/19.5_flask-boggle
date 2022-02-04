@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-6">
                     <form method="POST" id="add-word">
-                        <input name="word" id="word" style="text-transform:uppercase" >
+                        <input name="word" id="word" style="text-transform:uppercase" autocomplete="off">
                         <button id="check">Check</button>
                     </form>
                 </div>
@@ -35,25 +35,39 @@
             </div>
         </div>
 
-        <!-- makes board -->
-        <table id="board">
-            <tbody>
-                {% for row in board %}
-                <tr>
-                    {% for cell in row %}
-                    <td><span>{{cell}}</span></td>
-                    {% endfor %}
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        
+        <div class="container" id="game-board">
+            <div class="row">
+                <div class="col-2">
+                    <span class="words">
+                        <!-- JS will add words here as they score -->   
+                    </span>            
+                </div>
 
-        <p>score: <span id="score"></span></p>
+                <div class="col-8">
+                    <!-- makes board -->
+                    <table id="board">
+                        <tbody>
+                            {% for row in board %}
+                            <tr>
+                                {% for cell in row %}
+                                <td><span>{{cell}}</span></td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
 
-        <span class="words">
-            <!-- JS will add words here as they score -->   
-        </span>
+                <div class="col-2">
+                    <p>score: <span id="score" style="color:orange;"></span></p>
+                    <p>best score: 
+                        <span id="best-score">
+                            <b>{{ highscore }}</b> in {{ times_played }} plays
+                        </span>
+                    </p>            
+                </div>
+            </div>
+        </div>
         
     </section>
 

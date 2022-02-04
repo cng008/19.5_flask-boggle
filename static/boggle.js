@@ -22,6 +22,7 @@ let interval = setInterval(function () {
   if (countdown === 0) {
     clearInterval(interval);
     $('#timer').text("time's up!");
+    endGame();
     // disable board clicks, text input, check button
     $('span').off();
     $('#word').attr('disabled', 'disabled');
@@ -32,7 +33,6 @@ let interval = setInterval(function () {
 /* ADD WORD TO LIST OF WORDS */
 showWord = word => {
   $('.words').append($('<li>', { text: word }));
-  // $('.words').text($('.words').text() + word + ', ');
 };
 
 /** GAME SCORE COUNTER
@@ -83,4 +83,14 @@ async function handleSubmit(e) {
   }
 
   $word.val('').focus();
+}
+
+/* end of game: score and update message. */
+async function endGame() {
+  const resp = await axios.post('/post-score', { score: score });
+  if (resp.data.bestScore) {
+    showMessage(`New record: ${score}`, 'ok');
+  } else {
+    showMessage(`Final score: ${score}`, 'ok');
+  }
 }
