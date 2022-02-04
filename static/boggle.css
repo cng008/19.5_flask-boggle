@@ -81,3 +81,7 @@ td > span {
 td > span:hover {
   color: rgb(173, 132, 71);
 }
+
+ul {
+  list-style: none;
+}
