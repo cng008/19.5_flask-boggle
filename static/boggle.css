@@ -59,7 +59,7 @@ td {
   box-shadow: -4px -4px 4px rgb(255 255 255 / 60%), 4px 4px 8px rgb(0 0 0 / 40%);
 }
 
-td:hover {
+td:active {
   box-shadow: inset -3px -3px 8px rgb(255 255 255 / 30%);
 }
 
